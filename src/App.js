@@ -1,24 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import "./index.css";
+import React, { useState, useEffect } from "react";
+import List from "./list";
+import Alert from "./alert";
 
 function App() {
+  const [name, setName] = useState("");
+  const [list, setList] = useState([]);
+  const [isEditing, setIsEditing] = useState(false);
+  const [editID, setEditID] = useState(null);
+  const [alert, setAlert] = useState({
+    show: true,
+    msg: "hello world",
+    type: "success",
+  });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!name) {
+      //display alert
+    } else if (name && isEditing) {
+      //deal with edit
+    } else {
+      const newItem = { id: new Date().getTime().toString(), title: name };
+      setList([...list, newItem]);
+      setName("");
+    }
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section>
+      <form onSubmit={handleSubmit}>
+        {alert.show && <Alert {...alert} />}
+        <h3>Grocery assistant</h3>
+        <div>
+          <input
+            type="text"
+            placeholder="e.g. milk, eggs"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <button type="submit">{isEditing ? "edit" : "submit"}</button>
+        </div>
+      </form>
+      {list.length > 0 && (
+        <div>
+          <List items={list} />
+          <button>clear items</button>
+        </div>
+      )}
+    </section>
   );
 }
 
