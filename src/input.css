@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .container {
-  width: 50%;
+  width: 30%;
   margin-right: auto;
   margin-left: auto;
 }

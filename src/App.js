@@ -70,7 +70,7 @@ function App() {
   }, [list]);
   return (
     <section className=" my-8  bg-[#3d3b3b]">
-      <div className="container mx-auto">
+      <div className=" mx-auto">
         <form
           onSubmit={handleSubmit}
           className="p-3 text-center font-semibold text-xl"

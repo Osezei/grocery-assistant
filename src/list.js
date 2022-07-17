@@ -9,7 +9,7 @@ const List = ({ items, removeItem, editItem }) => {
         return (
           <article
             key={id}
-            className="flex container justify-between mt-2 mb-2"
+            className="flex justify-between mt-2 mb-2 container"
           >
             <p className="text-xl text-white">{title}</p>
             <div className="flex justify-center">
