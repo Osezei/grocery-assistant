@@ -73,7 +73,7 @@ function App() {
       <div className="container mx-auto">
         <form
           onSubmit={handleSubmit}
-          className="p-3 text-center font-semibold text-xl "
+          className="p-3 text-center font-semibold text-xl"
         >
           <div className="bg-[#fff] capitalize m-4">
             {alert.show && (
