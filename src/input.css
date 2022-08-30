@@ -7,3 +7,10 @@
   margin-right: auto;
   margin-left: auto;
 }
+
+body {
+  background-color: #3d3b3b;
+}
+.alert-danger {
+  color: red;
+}

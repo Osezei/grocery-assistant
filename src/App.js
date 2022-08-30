@@ -69,13 +69,13 @@ function App() {
     localStorage.setItem("list", JSON.stringify(list));
   }, [list]);
   return (
-    <section className=" my-8  bg-[#3d3b3b]">
-      <div className=" mx-auto">
+    <section className="bg-[#3d3b3b]">
+      <div className="pt-6 mx-auto">
         <form
           onSubmit={handleSubmit}
           className="p-3 text-center font-semibold text-xl"
         >
-          <div className="bg-[#fff] capitalize m-4">
+          <div className="">
             {alert.show && (
               <Alert {...alert} removeAlert={showAlert} list={list} />
             )}
